@@ -1,0 +1,38 @@
+{
+  "info": {
+    "_postman_id": "91108de3-7a0a-4b40-9cf2-24a319aaaca8",
+    "name": "Paddle OCR Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Synchronous Structured Text",
+      "id": "ae49fda9-9a51-443e-90e3-ebf7d57e8326",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{PADDLE_OCR_SERVICE_BASE_URL}}/plain/structured-sync",
+          "host": [
+            "{{PADDLE_OCR_SERVICE_BASE_URL}}"
+          ],
+          "path": [
+            "plain",
+            "structured-sync"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

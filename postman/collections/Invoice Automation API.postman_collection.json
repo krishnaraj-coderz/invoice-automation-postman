@@ -1,0 +1,345 @@
+{
+  "info": {
+    "_postman_id": "49fc13f0-d041-46f2-8218-ae4499e0489c",
+    "name": "Invoice Automation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register",
+          "id": "49bdff78-d372-40e7-8544-7b1aad729063",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"krishnaraj@coderzvisiontech.com\",\r\n    \"password\": \"123123123\",\r\n    \"username\": \"krishna\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{INVOICE_APP_BASE_URL}}/authentication/register",
+              "host": [
+                "{{INVOICE_APP_BASE_URL}}"
+              ],
+              "path": [
+                "authentication",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "98e27e1a-35e8-48ee-97e6-67d4b9ae8bc1",
+              "name": "Error - Duplication Conflict",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"krishnaraj@coderzvisiontech.com\",\r\n    \"password\": \"123123123\",\r\n    \"username\": \"krishna\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{INVOICE_APP_BASE_URL}}/authentication/register",
+                  "host": [
+                    "{{INVOICE_APP_BASE_URL}}"
+                  ],
+                  "path": [
+                    "authentication",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Mon, 15 Dec 2025 05:38:20 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "uvicorn"
+                },
+                {
+                  "key": "content-length",
+                  "value": "186"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"error\",\n    \"code\": 409,\n    \"message\": \"USERNAME krishna already exist try a different one\",\n    \"data\": null,\n    \"meta\": {\n        \"timestamp\": \"2025-12-15T05:38:21.193215\"\n    },\n    \"errors\": [\n        {\n            \"field\": \"username\"\n        }\n    ]\n}"
+            },
+            {
+              "id": "a94e89c1-bf93-4176-8048-3caa9495d3ca",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"sd@coderzvisiontech.com\",\r\n    \"password\": \"123123123\",\r\n    \"username\": \"krishnna\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{INVOICE_APP_BASE_URL}}/authentication/register",
+                  "host": [
+                    "{{INVOICE_APP_BASE_URL}}"
+                  ],
+                  "path": [
+                    "authentication",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "date",
+                  "value": "Mon, 15 Dec 2025 05:39:25 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "uvicorn"
+                },
+                {
+                  "key": "content-length",
+                  "value": "201"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"code\": 200,\n    \"message\": \"User Registered Successfully\",\n    \"data\": {\n        \"username\": \"krishnna\",\n        \"email\": \"sd@coderzvisiontech.com\"\n    },\n    \"meta\": {\n        \"timestamp\": \"2025-12-15T05:39:25.823794\"\n    },\n    \"errors\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "id": "31801f40-1182-4d71-a444-2707b1103e57",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"login\": \"krishna\",\r\n    \"password\": \"123123123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{INVOICE_APP_BASE_URL}}/authentication/login",
+              "host": [
+                "{{INVOICE_APP_BASE_URL}}"
+              ],
+              "path": [
+                "authentication",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Token",
+          "id": "ab09ff50-f9d0-4846-ab55-e451bc212ae2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh_token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtyaXNobmFyYWpAY29kZXJ6dmlzaW9udGVjaC5jb20iLCJleHAiOjE3NjYzOTUzODl9.1bxpkqesshGWGF-Kf_elwZ7HUZK1VDL36BLHvcXDsU8\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{INVOICE_APP_BASE_URL}}/authentication/refresh-token",
+              "host": [
+                "{{INVOICE_APP_BASE_URL}}"
+              ],
+              "path": [
+                "authentication",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "5e9e97ab-ee80-4deb-857b-89850145558e"
+    },
+    {
+      "name": "Vendors",
+      "item": [
+        {
+          "name": "Create",
+          "id": "ade40caf-0e60-4962-b73c-231f0979ed21",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"vendor2@test.com\",\r\n    \"name\": \"vendor3\",\r\n    \"external_id_type\": \"tax_id\",\r\n    \"external_id_value\":\"12346\",\r\n    \"address\": \"Chennai\",\r\n    \"country\":\"India\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{INVOICE_APP_BASE_URL}}/vendors/create",
+              "host": [
+                "{{INVOICE_APP_BASE_URL}}"
+              ],
+              "path": [
+                "vendors",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get",
+          "id": "a44d22fe-9962-42ed-bcc8-ff9fa312ae9f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{INVOICE_APP_BASE_URL}}/vendors/:id",
+              "host": [
+                "{{INVOICE_APP_BASE_URL}}"
+              ],
+              "path": [
+                "vendors",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "id": "3fcf93ac-2e6f-4579-ba96-076b99a97877",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"vendor2@test.com\",\r\n    \"name\": \"vendor3\",\r\n    \"external_id_type\": \"tax_id\",\r\n    \"external_id_value\":\"12346\",\r\n    \"address\": \"Chennai\",\r\n    \"country\":\"India\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{INVOICE_APP_BASE_URL}}/vendors/:id",
+              "host": [
+                "{{INVOICE_APP_BASE_URL}}"
+              ],
+              "path": [
+                "vendors",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "7b7e9f51-96ce-4608-bee6-574f2e7fa0ba"
+    },
+    {
+      "name": "Document",
+      "item": [
+        {
+          "name": "Upload",
+          "id": "446f1f6c-3cf6-4cb5-8510-d825ffa805a9",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/C:/Users/HP NEW/Downloads/Split test/Ontario Cannabis.pdf"
+                },
+                {
+                  "key": "split",
+                  "value": "true",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{INVOICE_APP_BASE_URL}}/document/upload",
+              "host": [
+                "{{INVOICE_APP_BASE_URL}}"
+              ],
+              "path": [
+                "document",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "0bb66129-3200-4295-85b6-fbd472412a42"
+    }
+  ]
+}

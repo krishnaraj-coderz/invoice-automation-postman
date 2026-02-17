@@ -1,0 +1,66 @@
+{
+  "info": {
+    "_postman_id": "bbccce7c-5bff-4013-8da7-ea3cede0ab2b",
+    "name": "Parse Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "93a0273e-875e-42da-bb42-9d23322cf457",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "943362ab-3a99-49dd-b3cc-9220dfb716e8",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "id": "e76c7e09-229a-46d9-baea-f19201842065",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"asd\":\"asd\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{PARSE_SERVICE_BASE_URL}}/invoice/sync",
+          "host": [
+            "{{PARSE_SERVICE_BASE_URL}}"
+          ],
+          "path": [
+            "invoice",
+            "sync"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
